@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import { StyleSheet, View, ImageBackground, Image, Text, TouchableOpacity } from 'react-native';
 import NetworkController from '../controller/NetworkController';
 
+
+
 export default function Login() {
-    useEffect(() => {
+  useEffect(() => {
     const checkConnection = async () => {
       const isConnected = await NetworkController.checkInternetConnection();
       if (!isConnected) {
@@ -15,14 +17,17 @@ export default function Login() {
 
     checkConnection();
   }, []);
+  
   return (
     <View style={styles.container}>
-        <ImageBackground source={require('../assets/background.png')} style={styles.backgroundImage}>
+      <ImageBackground source={require('../assets/background.png')} style={styles.backgroundImage} >
         <View style={styles.logoContainer}>
           <Image source={require('../assets/logo.png')} style={styles.logo} />
-      </View>
-        <Text style={styles.greetingText}>Hola,</Text>
-        <Text style={styles.welcomeText}>Genial verte de nuevo!</Text>
+        </View>
+        <View style={{alignSelf:'center', marginRight:40}}>
+          <Text style={styles.greetingText}>Hola,</Text>
+          <Text style={styles.welcomeText}>Genial verte de nuevo!</Text>
+        </View>
         <TouchableOpacity style={styles.googleButton}>
           <Text style={styles.buttonText}>Iniciar sesión con Google</Text>
         </TouchableOpacity>
@@ -33,38 +38,42 @@ export default function Login() {
 
 const styles = StyleSheet.create({
   container: {
-
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection:'column'
   },
+
   backgroundImage: {
     width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
+    height: '100%',
   },
   logoContainer: {
-    marginBottom: 30,
+    marginTop:30,
+    alignItems: 'center',
   },
   logo: {
-    width: 150,
-    height: 150,
+    width: 300,
+    height: 300,
   },
   greetingText: {
+    justifyContent: 'center',
+    fontWeight:'500',
     color: '#129575',
-    fontSize: 24,
-    marginBottom: 10,
+    fontSize: 30,
   },
   welcomeText: {
-    fontSize: 18,
-    marginBottom: 30,
+    color:'white',
+    fontSize: 22,
   },
   googleButton: {
+    marginLeft:'13%',
+    marginTop:100,
     backgroundColor: 'white',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
+    width: 300,
+    height: 50,
     borderRadius: 20,
   },
   buttonText: {
+    alignSelf:'center',
+    marginTop:'4%',
     color: 'black',
     fontSize: 16,
   },
