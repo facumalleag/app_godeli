@@ -3,8 +3,8 @@ import { View, ImageBackground, Image, Text, TouchableOpacity } from 'react-nati
 import NetworkController from '../controller/NetworkController';
 import { styles } from '../theme/LandingStyle';
 import InternetAlert from '../components/InternetAlert';
-import HomeScreen from '../screens/HomeScreen';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+
 
 interface Props extends NativeStackScreenProps<any,any>{
   
@@ -46,7 +46,7 @@ export default function Login({navigation}:Props) {
           <Text style={styles.welcomeText}>Genial verte de nuevo!</Text>
         </View>
         <TouchableOpacity style={styles.googleButton}
-         onPress={() => navigation.navigate('HomeScreen')}
+         onPress={() => navigation.navigate('TabNavigator')}
         >
           <Text style={styles.buttonText}>Iniciar sesión con Google</Text>
         </TouchableOpacity>

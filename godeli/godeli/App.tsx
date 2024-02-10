@@ -1,14 +1,3 @@
-/* import React from 'react';
-import Login from './src/Login';
-
-export default function App() {
-  return (
-
-  <Login/>
-
-  );
-} */
-
 import { NavigationContainer } from '@react-navigation/native';
 import * as React from 'react';
 import { StackNaviagtor } from './navigator/StackNavigator';
