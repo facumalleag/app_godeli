@@ -17,7 +17,7 @@ const SearchInput = () => {
                     autoCapitalize='none'
                     autoCorrect={false}
                 />
-                <Feather name="filter" size={40} color="#129575" style={styles.icon} onPress={()=>{
+                <Feather name="filter" size={35} color="#129575" style={styles.icon} onPress={()=>{
 }}/>
             </View>
             
