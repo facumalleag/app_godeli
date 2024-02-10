@@ -24,9 +24,6 @@ const HomeScreen = (props: any, { navigation }: Props) => {
       <Text style={screenHomeStyles.title}>Hola Christian</Text>
       <Text  style={screenHomeStyles.subtitle}>¿Que vas a cocinar hoy?</Text>
      <SearchInput/>
-
-
-
       <FlatList
         data={[
           { key: '1', name: 'Nicolas' },

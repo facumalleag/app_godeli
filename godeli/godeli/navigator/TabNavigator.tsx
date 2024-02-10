@@ -26,12 +26,13 @@ export function TabNavigator() {
             <Tab.Screen name="HomeScreen" component={HomeScreen} options={{ 
                 tabBarIcon: ({ focused }) => {
                     return <Feather name="home" size={30} color={
-                        focused ? "#129575" : "#EAEAEA"
+                        focused ? "#129575" : "#DBEBE7"
                     } />
                 }
             }}
             />
             <Tab.Screen name="MisRecetas" component={MisRecetasScreen} options={{
+               // headerShown:true,
                 tabBarIcon: () => {
                     return <MaterialCommunityIcons name="chef-hat" size={35} color='white'
                         style={{
@@ -53,7 +54,7 @@ export function TabNavigator() {
             <Tab.Screen name="Favoritos" component={FavoritosScreen} options={{
                 tabBarIcon: ({ focused }) => {
                     return <Fontisto name="favorite" size={30} color={
-                        focused ? "#129575" : "#EAEAEA"
+                        focused ? "#129575" : "#DBEBE7"
                     } />
                 }
             }}
