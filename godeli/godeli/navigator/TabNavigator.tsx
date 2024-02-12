@@ -51,7 +51,7 @@ export function TabNavigator() {
             }}
 
             />
-            <Tab.Screen name="Favoritos" component={FavoritosScreen} options={{
+            <Tab.Screen name="Recetas Guardadas" component={FavoritosScreen} options={{
                 tabBarIcon: ({ focused }) => {
                     return <Fontisto name="favorite" size={30} color={
                         focused ? "#129575" : "#DBEBE7"

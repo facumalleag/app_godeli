@@ -12,7 +12,7 @@ interface Props {
 }
 
 
-const RecetaItem = ({ recetaDesc, recetaKey }: Props) => {
+const RecetaItemGuardada = ({ recetaDesc, recetaKey }: Props) => {
     const navigation = useNavigation()
 
     return (
@@ -24,7 +24,7 @@ const RecetaItem = ({ recetaDesc, recetaKey }: Props) => {
                 marginHorizontal: 5,
                 backgroundColor: '#EAEAEA',
                 height: 200,
-
+                alignSelf:'center',
                 marginBottom: 25,
                 borderRadius: 30,
                 shadowColor: "#000",
@@ -35,7 +35,7 @@ const RecetaItem = ({ recetaDesc, recetaKey }: Props) => {
                 shadowOpacity: 0.29,
                 shadowRadius: 4.65,
                 elevation: 7,
-                width: window_width * 0.43
+                width: window_width * 0.88 
             }}>
 
                 <TouchableOpacity
@@ -47,7 +47,7 @@ const RecetaItem = ({ recetaDesc, recetaKey }: Props) => {
                         alignItems: 'center',
                         position: 'relative',
                         top: 4,
-                        right: -140
+                        right: -323
                     }}
                     onPress={() => {
                         Alert.alert('button pressed')
@@ -104,4 +104,4 @@ const RecetaItem = ({ recetaDesc, recetaKey }: Props) => {
     )
 }
 
-export default RecetaItem
+export default RecetaItemGuardada

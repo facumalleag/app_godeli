@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet, TextInput, Platform, Button } from 'react-native'
+import { View, StyleSheet, TextInput, Platform } from 'react-native'
 import { EvilIcons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 
