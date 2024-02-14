@@ -17,10 +17,13 @@ const FavoritosScreen = ({ navigation }: Props) => {
         <Text style={guardadoStyle.title}>Recetas Guardadas</Text>
       </View>
       <FlatList
+        showsVerticalScrollIndicator={false}
         data={[
           { key: '1', name: 'Nicolas' },
           { key: '2', name: 'Rover plate' },
           { key: '3', name: 'Velze Sarsfield' },
+          { key: '4', name: 'Chapalmadal' },
+          { key: '5', name: 'Mar del plata' },
         ]}
         renderItem={({ item }) =>
           <RecetaItemGuardada recetaKey={item.key} recetaDesc={item.name} />

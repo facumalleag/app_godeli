@@ -22,7 +22,9 @@ const MisRecetasScreen = ({navigation}: Props) => {
       </View>
       <Text style={screenMisRecetasStyles.addText}>Creá la tuya:</Text>
       <TouchableOpacity onPress={onButtonPress}>
-        <Ionicons name='add-circle' size={70} color="#129575" style={screenMisRecetasStyles.addIcon} />
+        <Ionicons name='add-circle' size={70} color="#129575" style={screenMisRecetasStyles.addIcon} 
+        onPress={()=>navigation.navigate('AgregarRecetaScreen')}
+        />
       </TouchableOpacity>
     </View>
   )

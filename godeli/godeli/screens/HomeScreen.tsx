@@ -1,10 +1,11 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react'
-import { FlatList, Platform, Text, View } from 'react-native';
+import { FlatList, Text, View } from 'react-native';
 import { screenHomeStyles } from '../theme/screenHomeStyles';
 import RecetaItem from '../components/RecetaItem';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import SearchInput from '../components/SearchInput';
+
 
 
 interface Props extends NativeStackScreenProps<any, any> { }
@@ -21,10 +22,13 @@ const HomeScreen = ({navigation}: Props) => {
       <Text style={screenHomeStyles.subtitle}>¿Que vas a cocinar hoy?</Text>
       <SearchInput />
       <FlatList
+        showsVerticalScrollIndicator={false}
         data={[
           { key: '1', name: 'Nicolas' },
           { key: '2', name: 'Rover plate' },
           { key: '3', name: 'Velze Sarsfield' },
+          { key: '4', name: 'Chapalmadal' },
+          { key: '5', name: 'Mar del plata' },
         ]}
         numColumns={2}
         renderItem={({ item }) =>

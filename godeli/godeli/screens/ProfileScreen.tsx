@@ -3,10 +3,16 @@ import { Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { Ionicons } from '@expo/vector-icons';
 import { styles } from '../theme/ProfileStyle';
 
+//const icon = this.props.active
+
 const ProfileScreen = () => {
     return (
         <View>
             <View style={styles.globalMargin}>
+
+{/*             ? require('./my-icon-active.png')
+  : require('./my-icon-inactive.png');
+<Image source={icon} />; */}
                 <Ionicons name="skull-outline" size={180} color="#129575" />
             </View>
             <View style={styles.form}>

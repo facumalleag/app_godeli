@@ -1,24 +1,25 @@
 import { StyleSheet } from "react-native";
 
-export const  guardadoStyle = StyleSheet.create({
+export const  agregarRecetaStyle = StyleSheet.create({
     globalMargin:{
         marginHorizontal:20,
         marginTop:40,
     },
     title:{
-        color:'#129575',
+        color:'black',
         fontSize:30,
-       fontWeight: "bold",
-        alignSelf:"flex-start",
-        marginTop:-40,
-        marginBottom:20,
-    },
-    profileStyle:{
-        alignSelf:"flex-end"
+        marginTop:10,
+        fontWeight: "bold",
     },
     icon:{
         alignSelf:"center",
-
+    },
+    addFoto:{
+        backgroundColor:'#d3d3d3',
+        marginTop:10,
+        width: 380, 
+        height: 150,
+        alignSelf:"center"
     },
     iconContainer:{
         flexDirection:"column",

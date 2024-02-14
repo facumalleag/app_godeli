@@ -1,12 +1,25 @@
 import { NavigationContainer } from '@react-navigation/native';
 import * as React from 'react';
 import { StackNaviagtor } from './navigator/StackNavigator';
+import { Provider } from 'react-redux';
+import store from './redux/Store';
 
-function App() {
+const GodeliApp = () => {
   return (
     <NavigationContainer>
       <StackNaviagtor />
     </NavigationContainer>
+  )
+
+}
+
+
+function App() {
+  return (
+    <Provider store={store}>
+      <GodeliApp/>
+    </Provider>
+
   );
 }
 
