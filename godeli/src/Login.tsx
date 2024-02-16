@@ -9,6 +9,7 @@ import {
   GoogleSigninButton,
   statusCodes,
 } from "@react-native-google-signin/google-signin";
+import axios from "axios";
 
 const configureGoogleSignIn = () => {
   GoogleSignin.configure({
@@ -26,7 +27,7 @@ interface Props extends NativeStackScreenProps<any,any>{
 }
 
 export default function Login({navigation}:Props) {
-  const [error, setError] = useState();
+  const [error, setError] = useState(null);
   const [userInfo, setUserInfo] = useState();
 
   useEffect(() => {
@@ -40,13 +41,32 @@ export default function Login({navigation}:Props) {
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
       setUserInfo(userInfo);
-      setError();
+
+      // console.log(userInfo.user.email, userInfo.user.name, userInfo.user.photo, userInfo.user.id);
+      // Perform a POST request using axios and include the specified keys in the JSON body
+      const response = await axios.post("http://godeli.mooo.com:3000/api/v1/auth/login", {
+        id_google: userInfo.user.id,
+        nombre: userInfo.user.name,
+        correo_electronico: userInfo.user.email,
+        url_imagen_perfil: userInfo.user.photo,
+      });
+
+      if (response.status === 200) {
+        console.log('Login successful');
+        navigation.navigate('TabNavigator')
+
+      } else {
+        console.error(`Login failed with status code`);
+      }
+
+      setError(null);
     } catch (e) {
       setError(e);
     }
   };
 
   const logout = () => {
+    console.log("Pressed logout");
     setUserInfo(undefined);
     GoogleSignin.revokeAccess();
     GoogleSignin.signOut();
