@@ -27,7 +27,7 @@ const SearchInput = () => {
 
 const styles = StyleSheet.create({
     icon: {
-        marginLeft:150
+        marginLeft:137
     },
     container: {
         paddingBottom: 20,

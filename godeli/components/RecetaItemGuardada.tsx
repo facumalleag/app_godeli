@@ -47,7 +47,7 @@ const RecetaItemGuardada = ({ recetaDesc, recetaKey }: Props) => {
                         alignItems: 'center',
                         position: 'relative',
                         top: 4,
-                        right: -323
+                        right: -300
                     }}
                     onPress={() => {
                         Alert.alert('button pressed')
@@ -93,7 +93,6 @@ const RecetaItemGuardada = ({ recetaDesc, recetaKey }: Props) => {
                     }}
                     onPress={() => {
                         Alert.alert('button pressed')
-                        console.log('Boton')
                     }}
                 >
                     {/*  <Icon name='hammer-outline' size={23} color='white' /> */}

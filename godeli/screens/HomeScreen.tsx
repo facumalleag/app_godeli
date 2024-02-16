@@ -1,22 +1,22 @@
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react'
 import { FlatList, Text, View } from 'react-native';
 import { screenHomeStyles } from '../theme/screenHomeStyles';
 import RecetaItem from '../components/RecetaItem';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import SearchInput from '../components/SearchInput';
+import useProfilePaginated from '../hooks/useProfilePaginated';
 
 
 
-interface Props extends NativeStackScreenProps<any, any> { }
+const HomeScreen = (props:any) => {
+  useProfilePaginated()
 
-const HomeScreen = ({navigation}: Props) => {
  //console.log()
   return (
     <View style={
       screenHomeStyles.globalMargin
     }>
-      <MaterialCommunityIcons onPress={()=>navigation.navigate('ProfileScreen')}
+      <MaterialCommunityIcons onPress={()=>props.navigation.navigate('ProfileScreen')}
         name="face-man-profile" size={50} color="#FFCE80" style={screenHomeStyles.profileStyle} />
       <Text style={screenHomeStyles.title}>Hola Christian</Text>
       <Text style={screenHomeStyles.subtitle}>¿Que vas a cocinar hoy?</Text>
