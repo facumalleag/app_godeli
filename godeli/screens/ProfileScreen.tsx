@@ -9,10 +9,6 @@ const ProfileScreen = () => {
     return (
         <View>
             <View style={styles.globalMargin}>
-
-{/*             ? require('./my-icon-active.png')
-  : require('./my-icon-inactive.png');
-<Image source={icon} />; */}
                 <Ionicons name="skull-outline" size={180} color="#129575" />
             </View>
             <View style={styles.form}>

@@ -2,8 +2,9 @@ import { StyleSheet } from "react-native";
 
 export const  screenHomeStyles = StyleSheet.create({
     globalMargin:{
-        marginHorizontal:20,
+        marginHorizontal:10,
         marginTop:40,
+        alignSelf:"center"
     },
     title:{
         color:'#129575',

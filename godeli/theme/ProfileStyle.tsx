@@ -9,7 +9,8 @@ export const  styles = StyleSheet.create({
         borderColor:"#129575",
     },
     form:{
-        marginTop:20,
+        marginTop:30,
+        alignItems:"center"
     },
     titleName:{
         color:'#949494',
