@@ -6,21 +6,27 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import SearchInput from '../../components/SearchInput';
 import useProfilePaginated from '../../hooks/useProfilePaginated';
 import { Link } from 'expo-router';
+import { FadeInImage } from '../../components/FadeImage';
 
 
 
 const HomeScreen = () => {
-  useProfilePaginated()
+  const { nombre, foto } = useProfilePaginated()
 
- //console.log()
   return (
     <View style={
       screenHomeStyles.globalMargin
     }>
-       <Link href='/ProfileScreen' style={screenHomeStyles.profileStyle}>
-      <MaterialCommunityIcons name="face-man-profile" size={50} color="#FFCE80" />
+      <Link href='/ProfileScreen' style={screenHomeStyles.profileStyle}>
+        <FadeInImage
+          uri={foto}
+          style={{
+            height: 50,
+            width: 50,
+          }}
+        />
       </Link>
-      <Text style={screenHomeStyles.title}>Hola Christian</Text>
+      <Text style={screenHomeStyles.title}>Hola {nombre}</Text>
       <Text style={screenHomeStyles.subtitle}>¿Que vas a cocinar hoy?</Text>
       <SearchInput />
       <FlatList

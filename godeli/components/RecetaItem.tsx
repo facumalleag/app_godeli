@@ -1,6 +1,5 @@
 import React from 'react'
 import { Alert, Dimensions, Text, TouchableOpacity, View } from "react-native";
-//import Icon from 'react-native-vector-icons/Ionicons'
 import { FadeInImage } from './FadeImage';
 
 const window_width = Dimensions.get('window').width
@@ -22,7 +21,6 @@ const RecetaItem = ({ recetaDesc, recetaKey }: Props) => {
                 marginHorizontal: 5,
                 backgroundColor: '#EAEAEA',
                 height: 200,
-
                 marginBottom: 25,
                 borderRadius: 30,
                 shadowColor: "#000",
@@ -35,7 +33,6 @@ const RecetaItem = ({ recetaDesc, recetaKey }: Props) => {
                 elevation: 7,
                 width: window_width * 0.43
             }}>
-
                 <TouchableOpacity
                     style={{
                         borderRadius: 80,
@@ -68,7 +65,6 @@ const RecetaItem = ({ recetaDesc, recetaKey }: Props) => {
                         DATOS DATOS
                     </Text>
                 </View>
-
                 <FadeInImage
                     //source={{uri: item.picture}}
                     uri={'assets/favicon.png'}

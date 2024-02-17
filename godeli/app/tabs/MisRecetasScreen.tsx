@@ -3,19 +3,27 @@ import React from 'react'
 import { Alert, Text, TouchableOpacity, View } from 'react-native'
 import { screenMisRecetasStyles } from '../../theme/screenMisRecetasStyles'
 import { Link } from 'expo-router'
+import { FadeInImage } from '../../components/FadeImage'
+import useProfilePaginated from '../../hooks/useProfilePaginated'
 
+const tieneRecetas=true // Flag para mostrar una pantalla u otra segun tenga recetas el usuario
 
-const onButtonPress = () => {
-  Alert.alert('button pressed')
-}
+const MisRecetasScreen = () => {
+  const { foto } = useProfilePaginated()
 
-const MisRecetasScreen = (props: any) => {
   return (
+    (tieneRecetas)?(
     <View style={
       screenMisRecetasStyles.globalMargin
     }>
       <Link href='/ProfileScreen' style={screenMisRecetasStyles.profileStyle}>
-      <MaterialCommunityIcons name="face-man-profile" size={50} color="#FFCE80"  />
+        <FadeInImage
+          uri={foto}
+          style={{
+            height: 50,
+            width: 50,
+          }}
+        />
       </Link>
       <Text style={screenMisRecetasStyles.title}>No tenés recetas</Text>
       <View style={screenMisRecetasStyles.iconContainer}>
@@ -27,6 +35,13 @@ const MisRecetasScreen = (props: any) => {
         />
       </Link>
     </View>
+    ):
+    <View style={
+      screenMisRecetasStyles.globalMargin
+    }>
+       <Text style={screenMisRecetasStyles.title}>Tenés recetas en algun lugar</Text>
+    </View>
+
   )
 }
 
