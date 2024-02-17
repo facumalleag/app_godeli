@@ -3,25 +3,28 @@ import React from 'react'
 import { Text, View } from 'react-native'
 import { screenMisRecetasStyles } from '../../theme/screenMisRecetasStyles'
 import { Link } from 'expo-router'
-import useProfilePaginated from '../../hooks/useProfilePaginated'
-import { FadeInImage } from '../../components/FadeImage'
 
+import { FadeInImage } from '../../components/FadeImage'
+import useProfilePaginated from '../../hooks/useProfilePaginated'
+
+
+const tieneRecetas=true // Flag para mostrar una pantalla u otra segun tenga recetas el usuario
 
 
 const MisRecetasScreen = () => {
   const { foto } = useProfilePaginated()
+
   return (
+    (tieneRecetas)?(
     <View style={
       screenMisRecetasStyles.globalMargin
     }>
       <Link href='/ProfileScreen' style={screenMisRecetasStyles.profileStyle}>
-      <FadeInImage
-          //source={{uri: item.picture}}
+        <FadeInImage
           uri={foto}
           style={{
-            height: 40,
-            width: 40,
-            borderRadius:80
+            height: 50,
+            width: 50,
           }}
         />
       </Link>
@@ -35,6 +38,13 @@ const MisRecetasScreen = () => {
         />
       </Link>
     </View>
+    ):
+    <View style={
+      screenMisRecetasStyles.globalMargin
+    }>
+       <Text style={screenMisRecetasStyles.title}>Tenés recetas en algun lugar</Text>
+    </View>
+
   )
 }
 

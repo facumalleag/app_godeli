@@ -2,28 +2,24 @@ import React from 'react'
 import { FlatList, Text, View } from 'react-native'
 import RecetaItemGuardada from '../../components/RecetaItemGuardada'
 import { guardadoStyle } from '../../theme/RecetasGuardadasStyle';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 import useProfilePaginated from '../../hooks/useProfilePaginated';
 import { FadeInImage } from '../../components/FadeImage';
 
 
 const FavoritosScreen = () => {
-  const { foto } = useProfilePaginated()
-
+  const {  foto } = useProfilePaginated()
   return (
     <View style={
       guardadoStyle.globalMargin
     }>
       <View style={{}}>
       <Link href='/ProfileScreen' style={guardadoStyle.profileStyle}>
-      <FadeInImage
-          //source={{uri: item.picture}}
+        <FadeInImage
           uri={foto}
           style={{
-            height: 40,
-            width: 40,
-            borderRadius:80
+            height: 50,
+            width: 50,
           }}
         />
       </Link>

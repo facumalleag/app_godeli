@@ -11,7 +11,8 @@ import { FadeInImage } from '../../components/FadeImage';
 
 
 const HomeScreen = () => {
-  const { foto } = useProfilePaginated()
+  const { nombre, foto } = useProfilePaginated()
+
 
   return (
     <View style={
@@ -19,16 +20,14 @@ const HomeScreen = () => {
     }>
       <Link href='/ProfileScreen' style={screenHomeStyles.profileStyle}>
         <FadeInImage
-          //source={{uri: item.picture}}
           uri={foto}
           style={{
-            height: 40,
-            width: 40,
-            borderRadius:80
+            height: 50,
+            width: 50,
           }}
         />
       </Link>
-      <Text style={screenHomeStyles.title}>Hola Christian</Text>
+      <Text style={screenHomeStyles.title}>Hola {nombre}</Text>
       <Text style={screenHomeStyles.subtitle}>¿Que vas a cocinar hoy?</Text>
       <SearchInput />
       <FlatList

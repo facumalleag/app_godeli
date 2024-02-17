@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { profileApi } from "../api/profileApi"
 
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImlhdCI6MTcwODE5MTk1ODA2MiwiZXhwIjoxNzA4MTk1NTU4MDYyfQ.Xx87jCrm80t1p-zHSKwZKNvEt_CUfm-VytN0zoiXMkw"
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImlhdCI6MTcwODIwNDMwNTIwNiwiZXhwIjoxNzA4MjA3OTA1MjA2fQ.OuwvIH48NGNA-ruPXK81re0JIXIVcdcdXK6_rPFqJg0"
 
 const useProfilePaginated = () => {
   const [nombre, setNombre] = useState('')
@@ -9,13 +9,14 @@ const useProfilePaginated = () => {
   const [foto, setFoto ]= useState('')
 
   useEffect(() => {
-    loadProfile()
+    getProfile()
   }, [])
 
   //const url="https://jsonplaceholder.typicode.com/posts"
   const nextPageUrl = useRef("http://18.224.38.52:3000/api/v1/users/me")
 
-  const loadProfile = async () => {
+
+  const getProfile = async () => {
    await profileApi.get(nextPageUrl.current, {
       headers: {
         Authorization: `Bearer ${token}`
