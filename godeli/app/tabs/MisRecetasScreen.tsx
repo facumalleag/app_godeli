@@ -1,21 +1,29 @@
-import { MaterialCommunityIcons, FontAwesome6, Ionicons } from '@expo/vector-icons'
+import { FontAwesome6, Ionicons } from '@expo/vector-icons'
 import React from 'react'
-import { Alert, Text, TouchableOpacity, View } from 'react-native'
+import { Text, View } from 'react-native'
 import { screenMisRecetasStyles } from '../../theme/screenMisRecetasStyles'
 import { Link } from 'expo-router'
+import useProfilePaginated from '../../hooks/useProfilePaginated'
+import { FadeInImage } from '../../components/FadeImage'
 
 
-const onButtonPress = () => {
-  Alert.alert('button pressed')
-}
 
-const MisRecetasScreen = (props: any) => {
+const MisRecetasScreen = () => {
+  const { foto } = useProfilePaginated()
   return (
     <View style={
       screenMisRecetasStyles.globalMargin
     }>
       <Link href='/ProfileScreen' style={screenMisRecetasStyles.profileStyle}>
-      <MaterialCommunityIcons name="face-man-profile" size={50} color="#FFCE80"  />
+      <FadeInImage
+          //source={{uri: item.picture}}
+          uri={foto}
+          style={{
+            height: 40,
+            width: 40,
+            borderRadius:80
+          }}
+        />
       </Link>
       <Text style={screenMisRecetasStyles.title}>No tenés recetas</Text>
       <View style={screenMisRecetasStyles.iconContainer}>
