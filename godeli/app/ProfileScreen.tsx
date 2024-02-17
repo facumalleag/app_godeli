@@ -1,12 +1,8 @@
 import React from 'react'
 import { Text, TextInput, TouchableOpacity, View } from 'react-native'
-import { Ionicons } from '@expo/vector-icons';
 import { styles } from '../theme/ProfileStyle';
 import useProfilePaginated from '../hooks/useProfilePaginated';
 import { FadeInImage } from '../components/FadeImage';
-
-//const icon = this.props.active
-
 
 const ProfileScreen = () => {
 
