@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Image, Text, TextInput, View } from 'react-native';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { agregarRecetaStyle } from '../theme/AgregarRecetasStyle';
 import { Ionicons } from '@expo/vector-icons';
 import {Camera, CameraType} from 'expo-camera'
@@ -9,11 +8,7 @@ import * as MediaLibrary from 'expo-media-library'
 import { useRef } from 'react';
 
 
-
-interface Props extends NativeStackScreenProps<any, any> { }
-
-
-const AgregarRecetaScreen = ({ navigation }: Props) => {
+const AgregarRecetaScreen = () => {
     const [hasCameraPermission, sethasCameraPermission] = useState(null)
     const [image, setImage] = useState(null)
     //const [type, setType] = useState(Camera.Constants.Type.back)

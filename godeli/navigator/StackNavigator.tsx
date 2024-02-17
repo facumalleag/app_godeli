@@ -1,10 +1,10 @@
 import React from 'react'
-import HomeScreen from '../screens/HomeScreen';
+import HomeScreen from '../app/tabs/HomeScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Login from '../src/Login';
+import Login from '../app/Login';
 import { TabNavigator } from '../navigator/TabNavigator';
-import ProfileScreen from '../screens/ProfileScreen';
-import AgregarRecetaScreen from '../screens/AgregarRecetaScreen';
+import ProfileScreen from '../app/ProfileScreen';
+import AgregarRecetaScreen from '../app/AgregarRecetaScreen';
 
 export type RootStackParams = {
   HomeScreen: undefined,

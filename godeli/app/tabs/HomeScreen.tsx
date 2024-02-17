@@ -1,14 +1,15 @@
 import React from 'react'
 import { FlatList, Text, View } from 'react-native';
-import { screenHomeStyles } from '../theme/screenHomeStyles';
-import RecetaItem from '../components/RecetaItem';
+import { screenHomeStyles } from '../../theme/screenHomeStyles';
+import RecetaItem from '../../components/RecetaItem';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import SearchInput from '../components/SearchInput';
-import useProfilePaginated from '../hooks/useProfilePaginated';
+import SearchInput from '../../components/SearchInput';
+import useProfilePaginated from '../../hooks/useProfilePaginated';
+import { Link } from 'expo-router';
 
 
 
-const HomeScreen = (props:any) => {
+const HomeScreen = () => {
   useProfilePaginated()
 
  //console.log()
@@ -16,8 +17,9 @@ const HomeScreen = (props:any) => {
     <View style={
       screenHomeStyles.globalMargin
     }>
-      <MaterialCommunityIcons onPress={()=>props.navigation.navigate('ProfileScreen')}
-        name="face-man-profile" size={50} color="#FFCE80" style={screenHomeStyles.profileStyle} />
+       <Link href='/ProfileScreen' style={screenHomeStyles.profileStyle}>
+      <MaterialCommunityIcons name="face-man-profile" size={50} color="#FFCE80" />
+      </Link>
       <Text style={screenHomeStyles.title}>Hola Christian</Text>
       <Text style={screenHomeStyles.subtitle}>¿Que vas a cocinar hoy?</Text>
       <SearchInput />
