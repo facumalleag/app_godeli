@@ -10,6 +10,7 @@ import {
   statusCodes,
 } from "@react-native-google-signin/google-signin";
 import axios from "axios";
+import * as SecureStore from 'expo-secure-store';
 
 const configureGoogleSignIn = () => {
   GoogleSignin.configure({
@@ -36,6 +37,14 @@ export default function Login({navigation}:Props) {
 
   const signIn = async () => {
     console.log("Pressed sign in");
+
+    const saveSecureValue = async (key, value) => {
+      await SecureStore.setItemAsync(key, value);
+    };
+  
+    const retrieveSecureValue = async (key) => {
+      let result = await SecureStore.getItemAsync(key);
+    };
   
     try {
       await GoogleSignin.hasPlayServices();
@@ -53,7 +62,12 @@ export default function Login({navigation}:Props) {
 
       if (response.status === 200) {
         console.log('Login successful');
-        navigation.navigate('TabNavigator')
+        // navigation.navigate('TabNavigator')
+        console.log(response.data.access_token);
+
+        await SecureStore.setItemAsync('access_token', response.data.access_token);
+        await SecureStore.setItemAsync('refresh_token', response.data.refresh_token);
+        
 
       } else {
         console.error(`Login failed with status code`);
@@ -65,8 +79,12 @@ export default function Login({navigation}:Props) {
     }
   };
 
-  const logout = () => {
+  const logout = async () => {
     console.log("Pressed logout");
+    const access_token = await SecureStore.getItemAsync('access_token');
+    const refresh_token = await SecureStore.getItemAsync('refresh_token');
+    console.log(access_token, refresh_token);
+
     setUserInfo(undefined);
     GoogleSignin.revokeAccess();
     GoogleSignin.signOut();
