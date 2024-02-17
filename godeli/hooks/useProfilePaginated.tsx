@@ -1,10 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { profileApi } from "../api/profileApi"
-import { Datum } from '../interfaces/ProfileInterface';
 
 const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImlhdCI6MTcwODIwNDMwNTIwNiwiZXhwIjoxNzA4MjA3OTA1MjA2fQ.OuwvIH48NGNA-ruPXK81re0JIXIVcdcdXK6_rPFqJg0"
-
-
 
 const useProfilePaginated = () => {
   const [nombre, setNombre] = useState('')
@@ -31,15 +28,8 @@ const useProfilePaginated = () => {
       setNombre(resp.data.data[0].nombre)
     }
     )
-    //mapProfile(resp.data.data)
   }
 
-  const mapProfile= (resp:Datum[]) =>{
-    setEmail(resp[0].correo_electronico)
-    setFoto(resp[0].url_imagen_perfil)
-    setNombre(resp[0].nombre)
-
-  }
 
   return{
     nombre,email,foto

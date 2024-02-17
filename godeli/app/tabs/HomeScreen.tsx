@@ -13,6 +13,7 @@ import { FadeInImage } from '../../components/FadeImage';
 const HomeScreen = () => {
   const { nombre, foto } = useProfilePaginated()
 
+
   return (
     <View style={
       screenHomeStyles.globalMargin

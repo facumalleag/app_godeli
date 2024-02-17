@@ -1,12 +1,15 @@
-import { MaterialCommunityIcons, FontAwesome6, Ionicons } from '@expo/vector-icons'
+import { FontAwesome6, Ionicons } from '@expo/vector-icons'
 import React from 'react'
-import { Alert, Text, TouchableOpacity, View } from 'react-native'
+import { Text, View } from 'react-native'
 import { screenMisRecetasStyles } from '../../theme/screenMisRecetasStyles'
 import { Link } from 'expo-router'
+
 import { FadeInImage } from '../../components/FadeImage'
 import useProfilePaginated from '../../hooks/useProfilePaginated'
 
+
 const tieneRecetas=true // Flag para mostrar una pantalla u otra segun tenga recetas el usuario
+
 
 const MisRecetasScreen = () => {
   const { foto } = useProfilePaginated()

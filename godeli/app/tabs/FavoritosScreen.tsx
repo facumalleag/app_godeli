@@ -38,7 +38,6 @@ const FavoritosScreen = () => {
           <RecetaItemGuardada recetaKey={item.key} recetaDesc={item.name} />
         }
       />
-
     </View>
   )
 }
