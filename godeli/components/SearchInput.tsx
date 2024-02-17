@@ -6,7 +6,7 @@ import { Feather } from '@expo/vector-icons';
 const SearchInput = () => {
     return (
         <View style={{...styles.container,
-            top: (Platform.OS ==='ios') ? 0 : 2
+            top: (Platform.OS ==='ios') ? 0 : 9
             }}>
             <View style={styles.textBackground}>
                 <EvilIcons name="search" size={40} color="#D9D9D9"/>
@@ -20,7 +20,6 @@ const SearchInput = () => {
                 <Feather name="filter" size={35} color="#129575" style={styles.icon} onPress={()=>{
 }}/>
             </View>
-            
         </View>
     )
 }

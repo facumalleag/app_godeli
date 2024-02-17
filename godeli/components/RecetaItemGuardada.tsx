@@ -1,6 +1,5 @@
 import React from 'react'
 import { Alert, Dimensions, Text, TouchableOpacity, View } from "react-native";
-import { useNavigation } from '@react-navigation/native';
 //import Icon from 'react-native-vector-icons/Ionicons'
 import { FadeInImage } from './FadeImage';
 
@@ -13,7 +12,6 @@ interface Props {
 
 
 const RecetaItemGuardada = ({ recetaDesc, recetaKey }: Props) => {
-    const navigation = useNavigation()
 
     return (
         <TouchableOpacity

@@ -1,14 +1,16 @@
-import React from 'react'
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
+
+const window_width = Dimensions.get('window').width
+const window_height = Dimensions.get('window').height
 
 export const styles = StyleSheet.create({
     container: {
-      flexDirection:'column'
+      flexDirection:'column',
     },
-  
+
     backgroundImage: {
-      width: '100%',
-      height: '100%',
+      width: window_width,
+      height: window_height,
     },
     logoContainer: {
       marginTop:30,
@@ -27,18 +29,20 @@ export const styles = StyleSheet.create({
     welcomeText: {
       color:'white',
       fontSize: 22,
-    },
+      marginBottom:70
+    },    
     googleButton: {
-      marginLeft:'13%',
-      marginTop:100,
+      alignSelf:'center',
       backgroundColor: 'white',
       width: 300,
       height: 50,
       borderRadius: 20,
+      textAlign:'center',
+      fontSize: 16,
     },
     buttonText: {
-      alignSelf:'center',
-      marginTop:'4%',
+     alignSelf:'center',
+     marginHorizontal:50,
       color: 'black',
       fontSize: 16,
     },

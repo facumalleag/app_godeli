@@ -1,16 +1,11 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from '../app/tabs/HomeScreen';
-import FavoritosScreen from '../app/tabs/FavoritosScreen';
-import MisRecetasScreen from '../app/tabs/MisRecetasScreen';
+import React from 'react';
+import { Tabs } from 'expo-router';
 import { MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
 
-const Tab = createBottomTabNavigator();
-
-export function TabNavigator() {
+const TabsNav = () => {
     return (
-        <Tab.Navigator
-        
+        <Tabs
             initialRouteName='HomeScreen'
             screenOptions={{
                 headerShown: false,
@@ -23,7 +18,7 @@ export function TabNavigator() {
                 },
             }}
         >
-            <Tab.Screen name="HomeScreen" component={HomeScreen} options={{ 
+            <Tabs.Screen name="HomeScreen" options={{
                 tabBarIcon: ({ focused }) => {
                     return <Feather name="home" size={30} color={
                         focused ? "#129575" : "#DBEBE7"
@@ -31,8 +26,8 @@ export function TabNavigator() {
                 }
             }}
             />
-            <Tab.Screen name="MisRecetas" component={MisRecetasScreen} options={{
-               // headerShown:true,
+            <Tabs.Screen name="MisRecetasScreen" options={{
+                // headerShown:true,
                 tabBarIcon: () => {
                     return <MaterialCommunityIcons name="chef-hat" size={35} color='white'
                         style={{
@@ -51,7 +46,7 @@ export function TabNavigator() {
             }}
 
             />
-            <Tab.Screen name="Recetas Guardadas" component={FavoritosScreen} options={{
+            <Tabs.Screen name="FavoritosScreen" options={{
                 tabBarIcon: ({ focused }) => {
                     return <Fontisto name="favorite" size={30} color={
                         focused ? "#129575" : "#DBEBE7"
@@ -59,6 +54,8 @@ export function TabNavigator() {
                 }
             }}
             />
-        </Tab.Navigator>
+        </Tabs>
     );
 }
+
+export default TabsNav

@@ -1,8 +1,9 @@
 import React from 'react'
 import { FlatList, Text, View } from 'react-native'
-import RecetaItemGuardada from '../components/RecetaItemGuardada'
-import { guardadoStyle } from '../theme/RecetasGuardadasStyle';
+import RecetaItemGuardada from '../../components/RecetaItemGuardada'
+import { guardadoStyle } from '../../theme/RecetasGuardadasStyle';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Link } from 'expo-router';
 
 
 const FavoritosScreen = (prop:any) => {
@@ -11,7 +12,9 @@ const FavoritosScreen = (prop:any) => {
       guardadoStyle.globalMargin
     }>
       <View style={{}}>
-      <MaterialCommunityIcons name="face-man-profile" size={50} color="#FFCE80" style={guardadoStyle.profileStyle} onPress={() => prop.navigation.navigate('ProfileScreen')} />
+      <Link href='/ProfileScreen' style={guardadoStyle.profileStyle}>
+      <MaterialCommunityIcons name="face-man-profile" size={50} color="#FFCE80"   />
+      </Link>
         <Text style={guardadoStyle.title}>Recetas Guardadas</Text>
       </View>
       <FlatList

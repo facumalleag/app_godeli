@@ -1,17 +1,15 @@
 import React, { useEffect } from 'react';
-import { View, ImageBackground, Image, Text, TouchableOpacity } from 'react-native';
+import { View, ImageBackground, Image, Text, TouchableOpacity, Pressable } from 'react-native';
 import NetworkController from '../controller/NetworkController';
 import { styles } from '../theme/LandingStyle';
 import InternetAlert from '../components/InternetAlert';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { Link } from 'expo-router';
 
 
-interface Props extends NativeStackScreenProps<any,any>{
-  
-}
 
-export default function Login({navigation}:Props) {
-   useEffect(() => {
+
+export default function Login() {
+    useEffect(() => {
     const checkConnection =  async () => {
       const isConnected = await NetworkController.checkInternetConnection();
       const type = await NetworkController.checkInternetConnection();
@@ -34,7 +32,6 @@ export default function Login({navigation}:Props) {
   },[]);
 
 
-
   return (
    <View style={styles.container}>
       <ImageBackground source={require('../assets/background.png')} style={styles.backgroundImage} >
@@ -45,11 +42,9 @@ export default function Login({navigation}:Props) {
           <Text style={styles.greetingText}>Hola,</Text>
           <Text style={styles.welcomeText}>Genial verte de nuevo!</Text>
         </View>
-        <TouchableOpacity style={styles.googleButton}
-         onPress={() => navigation.navigate('TabNavigator')}
-        >
-          <Text style={styles.buttonText}>Iniciar sesión con Google</Text>
-        </TouchableOpacity>
+        <Link href='/tabs/HomeScreen' style={styles.googleButton}>Iniciar sesión con Google
+          {/*  <Text style={styles.buttonText}>Iniciar sesión con Google</Text>  */}
+        </Link>
       </ImageBackground>
     </View> 
   );

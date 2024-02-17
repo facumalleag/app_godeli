@@ -15,9 +15,9 @@ export const  styles = StyleSheet.create({
     titleName:{
         color:'#949494',
         fontSize:18,
-        marginLeft:10
     },
     textName:{
+        
         margin:10,
         color:'#949494',
         backgroundColor:'lightgray',

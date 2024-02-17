@@ -4,6 +4,7 @@ export const  guardadoStyle = StyleSheet.create({
     globalMargin:{
         marginHorizontal:20,
         marginTop:40,
+        marginBottom:65
     },
     title:{
         color:'#129575',
